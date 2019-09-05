@@ -39,3 +39,21 @@ INSERT INTO books
 VALUES('The Trial', '1', '0805210407', '1995'),
 ('The Metamorphosis', '1', '0553213695', '1995'),
 ('America', '1', '0805210644', '1995');
+
+
+--Printing out the content of the book table
+SELECT title
+FROM books;
+
+
+--Combining title and author last name (from authors table)
+SELECT title, name_last
+FROM books
+JOIN authors USING (author_id);
+
+
+--Change the heading to Kafka Books, and only the record with Kafka printed
+SELECT title AS 'Kafka Books'
+FROM books
+JOIN authors USING (author_id)
+WHERE name_last = 'Kafka';
