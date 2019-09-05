@@ -17,7 +17,6 @@ SELECT lastName, firstName, jobTitle
 FROM employees
 ORDER BY lastName ASC, firstName ASC;
 
-
 --Sorted by title in a specified order, then by names
 SELECT lastName, firstName, jobTitle
 FROM employees
