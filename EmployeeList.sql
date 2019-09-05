@@ -16,3 +16,13 @@ ORDER BY lastName ASC;
 SELECT lastName, firstName, jobTitle
 FROM employees
 ORDER BY lastName ASC, firstName ASC;
+
+
+--Sorted by title in a specified order, then by names
+SELECT lastName, firstName, jobTitle
+FROM employees
+ORDER BY
+  FIELD(jobTitle, 'President', 'VP Marketing',
+        'VP Sales', 'Sales Manager (APAC)',
+        'Sale Manager (EMEA)', 'Sales Manager (NA)', 'Sales Rep'),
+  lastName ASC, firstName ASC;
